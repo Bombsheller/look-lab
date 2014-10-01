@@ -23,6 +23,16 @@ window.onload = function () {
         draw(art, w, h);
     });
 
+    // Here's where you get to play with the canvas! You can also enter these things
+    // in the web console to have the same effect (though make sure you use the
+    // art variable instead of b!). We use snap.svg.js to make these shapes (for
+    // now; the library could be substituted provided it generates an SVG). Here
+    // are its docs: http://snapsvg.io/docs.
+
+    // WHEN YOU ARE READY TO SAVE YOUR DESIGN:
+    // 1) In the web console type art.toString(). This will spit out an SVG string.
+    // 2) Copy-paste that SVG string into a blank file, name it something that makes sense.
+    // 3) Send it to Bombsheller to be imported to Illustrator!
     function draw (b, w, h) {
         // Background: a square that covers the whole area with a gradient fill.
         // Notice that we can now edit this after we've loaded the template. Sweet!
