@@ -29,10 +29,15 @@ window.onload = function () {
     // now; the library could be substituted provided it generates an SVG). Here
     // are its docs: http://snapsvg.io/docs.
 
+    // We could make this into a full-blown webapp by using http://ace.c9.io/#nav=about
+    // and http://repl.it/ and getting SVGs from submitted code, or something.
+    // For now, it's enough for us to enjoy.
+
     // WHEN YOU ARE READY TO SAVE YOUR DESIGN:
     // 1) In the web console type art.toString(). This will spit out an SVG string.
     // 2) Copy-paste that SVG string into a blank file, name it something that makes sense.
     // 3) Send it to Bombsheller to be imported to Illustrator!
+    // NOTE: The exported SVG can be dragged directl into Artemix!
     function draw (b, w, h) {
         // Background: a square that covers the whole area with a gradient fill.
         // Notice that we can now edit this after we've loaded the template. Sweet!
