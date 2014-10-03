@@ -33,6 +33,7 @@ window.onload = function () {
     // generates an SVG). Here are its docs: http://snapsvg.io/docs. You also
     // will likely want to know about SVG. Normally when I want to know I just
     // Google or cmd + F on http://www.w3.org/TR/SVG/paths.html or other SVG docs.
+    // Maybe D3 could be fun to use http://d3js.org/.
 
     // Could be made into a full-blown webapp by using http://ace.c9.io/#nav=about
     // and http://repl.it/ and getting SVGs from post data...?
