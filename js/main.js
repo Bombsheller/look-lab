@@ -54,6 +54,11 @@ window.onload = function () {
     // 5) Submit @ http://bombsheller.com/submit-designs.html
     function draw (brush, width, height) {
 
+        // Since a lot of fun things come out of pseudorandom numbers, being able
+        // to control the random seed is important. We use the randomseed library
+        // found here to do so: https://github.com/davidbau/seedrandom.
+        Math.seedrandom('bombsheller');
+
         // Start by making a couple of gradients because vector gradients rock.
         // This layer appears below the template.
         // You can even do stuff in your console for some REPL action.
