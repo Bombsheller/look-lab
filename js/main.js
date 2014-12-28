@@ -114,7 +114,7 @@ window.onload = function () {
 
     // Download helpers.
     function downloadSVG () {
-        window.open('data:text/xml;charset=utf-8,' + escape(art.toString()));
+        window.open('data:text/xml;charset=utf-8,' + escape(brush.toString()));
     }
 
     document.getElementById('download').addEventListener('click', downloadSVG);
