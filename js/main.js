@@ -14,9 +14,12 @@ window.onload = function () {
         width = getDimension(fragment, "width");
         height = getDimension(fragment, "height");
 
-        downloadButton = document.getElementById('download');
-        downloadButton.style.marginLeft = width + 'px';
-        downloadButton.style.fontSize = '100px';
+        makeButton = document.getElementById('make');
+        makeButton.style.marginLeft = width + 'px';
+        makeButton.style.fontSize = '100px';
+        downloadLink = document.getElementById('download');
+        downloadLink.style.marginLeft = width + 'px';
+        downloadLink.style.fontSize = '100px';
 
         // First SVG. Needs to be added to the DOM first to be below the template.
         brush = Snap(width, height)
@@ -113,9 +116,12 @@ window.onload = function () {
     }
 
     // Download helpers.
-    function downloadSVG () {
-        window.open('data:text/xml;charset=utf-8,' + escape(brush.toString()));
+    function makeSVG () {
+        var art = new Blob([brush.toString()], {type: 'text/svg'});
+        var artURL = window.URL.createObjectURL(art);
+        downloadLink.href = artURL;
+        downloadLink.style.display = 'block';
     }
 
-    document.getElementById('download').addEventListener('click', downloadSVG);
+    document.getElementById('make').addEventListener('click', makeSVG, false);
 };
