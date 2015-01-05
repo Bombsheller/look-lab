@@ -48,8 +48,8 @@ window.onload = function () {
     // and http://repl.it/ and POSTing an SVG - they typically weigh a few MB.
 
     // WHEN YOU ARE READY TO SAVE YOUR DESIGN:
-    // 1) Click the "Download SVG" button waaaaay out to the right.
-    // 2) Cmd + S that sucker. Change the filename end to .svg. Accept the prompt.
+    // 1) Click the "Make SVG" button to the right.
+    // 2) Click the "Download SVG" link that just appeared.
     // 3) Test your design by dragging it directly into Artemix.bombsheller.com
     // 4) Tweak some variables for some variants (or something), repeat 1-3.
     //    Make sure you keep a copy of the draw() method somehow! I use git
