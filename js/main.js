@@ -1,5 +1,7 @@
 // Hello!
 // Welcome to Bombsheller's Look Labs. You can design leggings with code here.
+// The graphics format we use is SVG. There are tons of resources online for SVG.
+// Here's one: http://www.learnsvg.com/
 // If you haven't yet, please read our Designing for Bodies page here:
 // http://bombsheller.com/designing-for-bodies.html.
 
@@ -9,7 +11,8 @@
 // 3) Type python -m SimpleHTTPServer.
 // 4) Open localhost:8000.
 // 5) Change the code below.
-// 6) Refresh. goto 5.
+// 6) Refresh.
+// 7) goto 5.
 
 // When you are ready to save your design:
 // 1) Click the "Make SVG" button to the right.
