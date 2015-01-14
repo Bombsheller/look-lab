@@ -119,6 +119,12 @@ function setup () {
         width = getDimension(fragment, "width");
         height = getDimension(fragment, "height");
 
+        var ratio = 0.25;
+        var style = Snap.format("position: absolute; left: 0; transform: scale({ratio}, {ratio}); margin-left: -{margin}; margin-top: -{margin}", {
+            ratio: ratio,
+            margin: width * (1 - ratio) / 2
+        });
+
         // Artboard creation.
         // This layer appears below the template because the brush variable is
         // added to the DOM before the template SVG.
@@ -128,21 +134,21 @@ function setup () {
         brush = Snap(width, height)
             .attr({
                 id: 'draw',
-                style:"position: absolute;left: 0;"
+                style: style
             });
 
         // Now we add template <svg> to the DOM.
         s = Snap(width, height)
-            .attr({ style:"position: absolute;left: 0;" })
+            .attr({ style: style })
             .append(fragment);
 
         // Positioning of download button and link.
         makeButton = document.getElementById('make');
-        makeButton.style.marginLeft = width + 'px';
-        makeButton.style.fontSize = '100px';
+        makeButton.style.marginLeft = width * ratio + 'px';
+        makeButton.style.fontSize = '50px';
         downloadLink = document.getElementById('download');
-        downloadLink.style.marginLeft = width + 'px';
-        downloadLink.style.fontSize = '100px';
+        downloadLink.style.marginLeft = width * ratio + 'px';
+        downloadLink.style.fontSize = '50px';
 
         draw(brush, width, height);
     });
