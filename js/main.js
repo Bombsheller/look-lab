@@ -120,9 +120,9 @@ function setup () {
         height = getDimension(fragment, "height");
 
         var ratio = 0.30;
-        var style = Snap.format("position: absolute; left: 0; transform: scale({ratio}, {ratio}); margin-left: -{margin}; margin-top: -{margin}", {
+        style = Snap.format("position: absolute; left: 0; transform: scale({ratio}, {ratio}); margin-left: -{margin}; margin-top: -{margin}", {
             ratio: ratio,
-            margin: width * (1 - ratio) / 2
+            margin: Math.floor(width * (1 - ratio) / 2)
         });
 
         // Artboard creation.
@@ -143,25 +143,34 @@ function setup () {
             .append(fragment);
 
         // Positioning of download button and link.
+        var margin = Math.floor(width * ratio);
         makeButton = document.getElementById('make');
-        makeButton.style.marginLeft = width * ratio + 'px';
+        makeButton.style.marginLeft = margin + 'px';
         makeButton.style.fontSize = '30px';
         downloadLink = document.getElementById('download');
-        downloadLink.style.marginLeft = width * ratio + 'px';
+        downloadLink.style.marginLeft = margin + 'px';
         downloadLink.style.fontSize = '30px';
 
         draw(brush, width, height);
+
+        function getSVGString () {
+            var HTMLString = brush.toString();
+            var styleIndex = HTMLString.indexOf('style');
+            var styleLength = style.length + 8;
+            console.log(styleLength);
+            return HTMLString.slice(0, styleIndex) + HTMLString.slice(styleIndex + styleLength);
+        }
+
+        // Download helpers.
+        function makeSVG () {
+            var art = new Blob([getSVGString()], {type: 'text/svg'});
+            var artURL = window.URL.createObjectURL(art);
+            downloadLink.href = artURL;
+            downloadLink.style.display = 'block';
+        }
+
+        document.getElementById('make').addEventListener('click', makeSVG, false);
     });
-
-    // Download helpers.
-    function makeSVG () {
-        var art = new Blob([brush.toString()], {type: 'text/svg'});
-        var artURL = window.URL.createObjectURL(art);
-        downloadLink.href = artURL;
-        downloadLink.style.display = 'block';
-    }
-
-    document.getElementById('make').addEventListener('click', makeSVG, false);
 }
 
 window.onload = setup;
