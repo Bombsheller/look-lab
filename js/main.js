@@ -18,10 +18,14 @@
 // 1) Click the "Make SVG" button to the right.
 // 2) Click the "Download SVG" link that just appeared.
 // 3) Test your design by dragging it directly into Artemix.bombsheller.com
-// 4) Tweak some variables for some variants (or something), repeat 1-3.
+// 4) Tweak some variables for some variants, repeat 1-3.
 //    Make sure you keep a copy of the draw() method somehow! We like git
 //    branches. Copy-pasting this file into a folder with the design works, too.
-// 5) Submit @ http://bombsheller.com/submit-designs.html
+// 5) Import design into Adobe Illustrator, one ai file per variant. Hopefully
+//    you won't have to do this soon, but rigt now it's a necessary evil. If you
+//    know of an SVG rasterizer that implements SVG's filter effects, we would
+//    love to know about it!
+// 6) Submit @ http://bombsheller.com/submit-designs.html
 
 // A NOTE ABOUT SIZING: The height of the XS template (what's presented to you
 // right now) is ~37 inches. That makes the whole template svg ~40 inches.
@@ -77,7 +81,7 @@ function draw (brush, width, height) {
     // Other layers on top of the background. Uncomment to see what they do.
 
     // Stripes.
-    // // You can type stripes into the console to add more shapes to the group.
+    // You can type stripes into the console to add more shapes to the group.
     // stripes = brush.g();
     // var fraction = width / 24;
     // for (var i = 0; i < 24; i++) {
