@@ -35,6 +35,23 @@ function draw (brush, width, height) {
     square = brush.rect(0, 0, width, height);
     square.attr({fill: topToBottom});
 
+    // Here's a demonstration of one drawing style:
+    // First, we get all of the points we're going to draw shapes on, then we
+    // draw our shapes on those points. This is nice because it separates the
+    // where from the what, allowing you to choose different distributions of
+    // points or change geometries easily. Notice that the randomPoints method
+    // lives in the tools.js file. Check it out!
+    var centers = randomPoints(50, width, height);
+
+    for (var i = centers.length - 1; i >= 0; i--) {
+        var thisCenter = centers[i];
+        var hexagon = hexagonPoints(thisCenter, 40, 0);
+
+        // We can use colors defined in tools.js here!
+        brush.polygon( pointsToSnapArray(hexagon) )
+            .attr({ fill: greys[1] });
+    }
+
     // Path string for the XS leggings template outline. Helps remove paths
     // that aren't completely on the leggings (so seams are less noticable).
     xsPath = s.select("#Sew_Lines #Sew_Lines_1_").toString();
