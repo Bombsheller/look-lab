@@ -24,7 +24,7 @@ http://bombsheller.com/designing-for-bodies.html.
 6. Refresh your browser.
 7. `goto 5`.
 
-A note about sizing: The height of the XS template (what's presented to you
+**A note about sizing**: The height of the XS template (what's presented to you
 right now) is ~37 inches. That makes the whole template svg ~40 inches.
 The height in SVG units is ~2880. (I intentionally don't put a unit
 denomination because SVGs are scalable. The assumed unit when putting SVGs
